@@ -1,0 +1,36 @@
+name: Test Automation DemoPHP
+
+on: 
+  push:
+    branches: [main]
+
+  schedule:
+    - cron: '0 10 * * *'
+
+jobs: 
+  cypress-run:
+    runs-on: windows-latest
+
+    steps:
+      - name: Clonar projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar Node  
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20
+          cache: npm
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - name: Upload relatório Mochawesome
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports/html

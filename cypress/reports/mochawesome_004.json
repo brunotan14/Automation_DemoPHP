@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-02T17:39:22.532Z",
+    "end": "2026-02-02T17:39:34.549Z",
+    "duration": 12017,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cb9f1fb7-379a-4545-9cd4-be6189dfe1f0",
+      "title": "",
+      "fullFile": "cypress/e2e/Login.cy.js",
+      "file": "cypress/e2e/Login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "05586db9-d953-4887-964d-802d100fff20",
+          "title": "Testes de login da DemoPHP",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Teste 1 - Login com sucesso",
+              "fullTitle": "Testes de login da DemoPHP Teste 1 - Login com sucesso",
+              "timedOut": null,
+              "duration": 5230,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('cadastro').then(user => {\n  _pageseexport.default.login(user.user1.email, user.user1.senha);\n});",
+              "err": {},
+              "uuid": "ec266b10-d2f0-44bc-aebc-084a433c870f",
+              "parentUUID": "05586db9-d953-4887-964d-802d100fff20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste 2 - Login com Email não cadastrado",
+              "fullTitle": "Testes de login da DemoPHP Teste 2 - Login com Email não cadastrado",
+              "timedOut": null,
+              "duration": 2151,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = _faker.faker.internet.email();\nconst senha = _faker.faker.internet.password({\n  length: 10\n});\n_pageseexport.default.login(user, senha);\n_pageseexport.default.CheckMessageError('Error Invalid Credentials');",
+              "err": {},
+              "uuid": "0d6ab082-ad9d-4244-9246-bde3991becc9",
+              "parentUUID": "05586db9-d953-4887-964d-802d100fff20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste 3 - Login com senha inválida",
+              "fullTitle": "Testes de login da DemoPHP Teste 3 - Login com senha inválida",
+              "timedOut": null,
+              "duration": 2261,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('cadastro').then(user => {\n  _pageseexport.default.login(user.user1.email, \"error1234\");\n  _pageseexport.default.CheckMessageError('Error Invalid Credentials');\n});",
+              "err": {},
+              "uuid": "353ef23d-97dd-4d9c-bfee-67e592ec3d00",
+              "parentUUID": "05586db9-d953-4887-964d-802d100fff20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste 4 - Login com dados randômicos",
+              "fullTitle": "Testes de login da DemoPHP Teste 4 - Login com dados randômicos",
+              "timedOut": null,
+              "duration": 2290,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const email = _faker.faker.internet.email();\nconst password = _faker.faker.internet.password();\n_pageseexport.default.login(email, password);\n_pageseexport.default.CheckMessageError('Error Invalid Credentials');",
+              "err": {},
+              "uuid": "a95fbd9b-9085-41a7-825f-df0fc6317069",
+              "parentUUID": "05586db9-d953-4887-964d-802d100fff20",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ec266b10-d2f0-44bc-aebc-084a433c870f",
+            "0d6ab082-ad9d-4244-9246-bde3991becc9",
+            "353ef23d-97dd-4d9c-bfee-67e592ec3d00",
+            "a95fbd9b-9085-41a7-825f-df0fc6317069"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11932,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "reportPageTitle": "PHPTravels - Cypress Automation Report"
+      },
+      "version": "6.3.2"
+    }
+  }
+}
